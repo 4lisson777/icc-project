@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geek Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Geek Center</div>
+        <button class="burger-menu" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <button class="nav-link active" data-view="products">Produtos</button>
+            <button class="nav-link" data-view="clients">Clientes</button>
+            <button class="nav-link" data-view="purchases">Compras</button>
+            <button class="nav-link" data-view="reports">Relatórios</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main>
+            <section id="products-view" class="view active">
+                <div class="section-header">
+                    <h2>Produtos</h2>
+                    <button class="show-form-btn" data-form="product-form">+ Novo Produto</button>
+                </div>
+                <form id="product-form" class="hidden">
+                    <input type="text" id="product-name" placeholder="Nome do Produto" required>
+                    <select id="product-type" required>
+                        <option value="1">Action Figure</option>
+                        <option value="2">HQ</option>
+                        <option value="3">Poster</option>
+                        <option value="4">Livro</option>
+                        <option value="5">Filme</option>
+                    </select>
+                    <input type="number" id="product-value" placeholder="Valor" step="0.01" required>
+                    <input type="text" id="product-description" placeholder="Descrição" required>
+                    <button type="submit">Cadastrar Produto</button>
+                </form>
+                <div id="products-list"></div>
+            </section>
+
+            <section id="clients-view" class="view">
+                <div class="section-header">
+                    <h2>Clientes</h2>
+                    <button class="show-form-btn" data-form="client-form">+ Novo Cliente</button>
+                </div>
+                <form id="client-form" class="hidden">
+                    <input type="text" id="client-name" placeholder="Nome do Cliente" required>
+                    <input type="text" id="client-address" placeholder="Endereço" required>
+                    <button type="submit">Cadastrar Cliente</button>
+                </form>
+                <div id="clients-list"></div>
+            </section>
+
+            <section id="purchases-view" class="view">
+                <div class="section-header">
+                    <h2>Compras</h2>
+                    <button class="show-form-btn" data-form="purchase-form">+ Nova Compra</button>
+                </div>
+                <form id="purchase-form" class="hidden">
+                    <select id="purchase-client" required>
+                        <option value="">Selecione o Cliente</option>
+                    </select>
+                    <select id="purchase-product" required>
+                        <option value="">Selecione o Produto</option>
+                    </select>
+                    <button type="submit">Registrar Compra</button>
+                </form>
+                <div id="purchases-list"></div>
+            </section>
+
+            <section id="reports-view" class="view">
+                <h2>Relatórios</h2>
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <h3>Produtos Mais Vendidos</h3>
+                        <div id="products-report"></div>
+                    </div>
+                    <div class="report-card">
+                        <h3>Clientes Mais Ativos</h3>
+                        <div id="clients-report"></div>
+                    </div>
+                    <div class="report-card">
+                        <h3>Total de Vendas</h3>
+                        <div id="sales-report"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
